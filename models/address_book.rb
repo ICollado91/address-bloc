@@ -28,6 +28,20 @@ require "csv"
             end
         end
         
+        def iterative_search(name)
+            iterations = 0
+            
+            while iterations < entries.length
+                if name == entries[iterations].name
+                    return entries[iterations]
+                else
+                    iterations += 1
+                end
+            end
+                
+            return nil
+        end
+        
         def binary_search(name)
             lower = 0
             upper = entries.length - 1
@@ -47,4 +61,6 @@ require "csv"
             
             return nil
         end
+        
+        
     end
