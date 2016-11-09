@@ -14,6 +14,7 @@ class MenuController
         puts "3 - Search for an entry"
         puts "4 - Import entries from a CSV"
         puts "5 - Exit"
+        puts "6 - Delete all entires from address_book"
         print "Enter your selection: "
         
         selection = gets.to_i
@@ -38,6 +39,10 @@ class MenuController
             when 5
                 puts "Good-bye!"
                 exit(0)
+            when 6
+                system "clear"
+                fluffy_bunnies
+                main_menu
             else
                 system "clear"
                 puts "Sorry, that is not a valid input"
@@ -177,4 +182,11 @@ class MenuController
                 search_submenu(entry)
         end
     end
+    
+    def fluffy_bunnies
+        #method to delete all entries at once
+        address_book.entries.clear
+        puts "All entries deleted!"
+    end
+    
 end
